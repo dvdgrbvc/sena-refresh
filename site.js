@@ -18,11 +18,8 @@
       countdown.hidden = true;
       releaseStatus.textContent = 'Şimdi yayında';
       document.getElementById('release-time').hidden = true;
-      document.getElementById('release-cta-label').textContent = 'Şimdi dinle';
-      document.getElementById('new-track-status').textContent = 'Yeni şarkı · Yayında';
-      document.getElementById('new-track-link').href = '#dinle';
-      document.getElementById('new-track-link').setAttribute('aria-label', 'Alışılır mı Aşka — dinleme bağlantıları');
-      document.getElementById('new-track-link-label').textContent = 'Dinle';
+      // Only the second song changes state. Album listening links are always available.
+      document.body.classList.toggle('track-released', true);
       window.clearInterval(releaseTimer);
       return;
     }
@@ -61,7 +58,7 @@
     soundToggle.setAttribute('aria-pressed', String(audible));
     motionToggle.setAttribute('aria-pressed', String(playing));
     document.getElementById('sound-label').textContent = audible ? 'Sesi kapat' : 'Sesi aç';
-    document.getElementById('motion-label').textContent = playing ? 'Videoyu duraklat' : 'Videoyu oynat';
+    document.getElementById('motion-label').textContent = playing ? 'Duraklat' : 'Oynat';
   }
   function playVideo() {
     var attempt = ++playAttempt;
@@ -75,7 +72,7 @@
     }).catch(function () {
       if (attempt === playAttempt && !mediaFailed) {
         video.muted = true;
-        mediaStatus.textContent = 'Video başlamadı. Oynat düğmesiyle tekrar deneyebilirsin.';
+        mediaStatus.textContent = 'Video başlamadı. Oynat düğmesiyle tekrar dene.';
         syncMediaControls();
       }
       return false;
@@ -114,7 +111,7 @@
     pauseVideo();
     video.muted = true;
     document.getElementById('film-controls').hidden = true;
-    mediaStatus.textContent = 'Video şu an yüklenemiyor. Müziğe aşağıdaki bağlantılardan ulaşabilirsin.';
+    mediaStatus.textContent = 'Video şu an yüklenemiyor. Dinleme bağlantıları kullanılabilir.';
   }
   video.addEventListener('error', handleMediaError);
   video.querySelector('source').addEventListener('error', handleMediaError);
