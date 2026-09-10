@@ -2,10 +2,10 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#27150f">
   <title>Sena Şener — Alışılır mı Aşka</title>
-  <meta name="description" content="Sena Şener — Alışılır mı Aşka, 11 Eylül 2026. Şarkı şarkı açılan bir albüm. Yeni müzikler ve dinleme bağlantıları.">
+  <meta name="description" content="Sena Şener — Alışılır mı Aşka, 11 Eylül 2026. Şarkı şarkı açılan bir albüm.">
   <meta property="og:title" content="Sena Şener — Alışılır mı Aşka">
   <meta property="og:description" content="Alışılır mı Aşka · 11 Eylül 2026. Şarkı şarkı açılan bir albüm.">
   <meta property="og:image" content="assets/logo.png">
@@ -16,34 +16,35 @@
   <script src="site.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">İçeriğe geç</a>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Sena Şener — ana sayfa">
-      <img src="assets/logo.png" width="44" height="44" alt="">
-      <span>Sena Şener</span>
-    </a>
-    <nav aria-label="Ana menü">
-      <a href="#album">Albüm</a>
-      <a href="#dinle">Dinle <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
+  <div class="stage">
+    <div class="hero-film" aria-hidden="true">
+      <video id="bgvid" muted loop playsinline preload="none" poster="assets/poster.jpg" tabindex="-1">
+        <source src="assets/teaser.mp4" type="video/mp4">
+      </video>
+    </div>
 
-  <main id="main">
-    <section class="hero" aria-labelledby="release-title">
-      <div class="hero-film" aria-hidden="true">
-        <video id="bgvid" muted loop playsinline preload="none" poster="assets/poster.jpg" tabindex="-1">
-          <source src="assets/teaser.mp4" type="video/mp4">
-        </video>
+    <!-- Retained vinyl and artist label, now part of the backdrop rather than another section. -->
+    <div class="hero-record" aria-hidden="true">
+      <div class="disc">
+        <div class="grooves"></div>
+        <div class="hr-label"><img src="assets/logo.png" width="800" height="800" alt=""></div>
       </div>
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="small-rule" aria-hidden="true"></span> Sena Şener · Yeni şarkı</p>
-          <h1 id="release-title"><span>Alışılır mı</span><span class="title-last">Aşka<span class="title-mark" aria-hidden="true">✳</span></span></h1>
-          <p class="release-intro">Her şarkıyla biraz daha.<br>Yeni albümden bir parça daha.</p>
-          <div class="release-info">
-            <p class="release-status" id="release-status" role="status" aria-live="polite">11 Eylül'de</p>
-            <p class="release-date"><time id="release-date" datetime="2026-09-11T00:00:00+03:00">11 Eylül 2026</time><span id="release-time"> · 00.00 (TSİ)</span></p>
-          </div>
+    </div>
+
+    <header class="site-header">
+      <p class="wordmark">Sena Şener</p>
+    </header>
+
+    <main id="main" class="release" aria-labelledby="release-title">
+      <div class="release-content">
+        <h1 id="release-title"><span>Alışılır mı</span> <span class="title-last">Aşka</span></h1>
+
+        <div class="release-info">
+          <p class="release-status" id="release-status" role="status" aria-live="polite">11 Eylül'de</p>
+          <p class="release-date"><time id="release-date" datetime="2026-09-11T00:00:00+03:00">11 Eylül 2026</time><span id="release-time"> · 00.00 (TSİ)</span></p>
+        </div>
+
+        <div class="release-action-area">
           <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="Yayına kalan süre" hidden>
             <div class="countdown-unit" id="countdown-days" hidden><span data-unit="days">00</span><span class="countdown-label">gün</span></div>
             <div class="countdown-unit"><span data-unit="hours">00</span><span class="countdown-label">saat</span></div>
@@ -52,72 +53,33 @@
             <span class="countdown-colon" aria-hidden="true">:</span>
             <div class="countdown-unit"><span data-unit="seconds">00</span><span class="countdown-label">saniye</span></div>
           </div>
-          <div class="hero-actions">
-            <a class="button button-primary" id="release-cta" href="#dinle"><span id="release-cta-label">Sena'yı dinle</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#album">Albümü keşfet <span aria-hidden="true">↓</span></a>
+
+          <a class="artist-link" id="pre-release-link" href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer">Spotify'da Sena Şener<span class="sr-only"> — yeni sekmede açılır</span></a>
+
+          <div class="listen-links" id="listen-links" hidden>
+            <nav class="platforms" aria-label="Sena Şener — dinleme bağlantıları">
+              <a class="platform-primary" href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer">Spotify<span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
+              <a href="https://music.apple.com/tr/artist/sena-%C5%9Fener/1084577486" target="_blank" rel="noopener noreferrer">Apple Music<span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
+              <a href="https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
+            </nav>
           </div>
         </div>
-        <div class="film-caption">
-          <span class="film-caption-line" aria-hidden="true"></span>
-          <p>Aşkından Ölmemeli<span>Albüm dünyasından görüntüler</span></p>
-        </div>
       </div>
-      <div class="hero-bottom">
-        <p class="sound-note">Anadolu ruhu. Soul. Biraz caz.</p>
-        <div class="film-controls" id="film-controls" hidden>
-          <button id="sound-toggle" type="button" aria-pressed="false" aria-controls="bgvid"><span class="sound-icon" aria-hidden="true">♪</span><span id="sound-label">Sesi aç</span></button>
-          <button id="motion-toggle" type="button" aria-pressed="false" aria-controls="bgvid"><span id="motion-label">Videoyu oynat</span></button>
-        </div>
+    </main>
+
+    <footer class="stage-footer">
+      <div class="film-controls" id="film-controls" hidden>
+        <button id="sound-toggle" type="button" aria-label="Aşkından Ölmemeli videosunun sesi" aria-pressed="false" aria-controls="bgvid">
+          <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path class="sound-off" d="m16 9 6 6m0-6-6 6"/><path class="sound-on" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>
+          <span id="sound-label">Sesi aç</span>
+        </button>
+        <button id="motion-toggle" type="button" aria-label="Aşkından Ölmemeli videosunun oynatımı" aria-pressed="false" aria-controls="bgvid">
+          <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="play-symbol" d="m8 5 11 7-11 7V5Z"/><path class="pause-symbol" d="M8 5v14M16 5v14"/></svg>
+          <span id="motion-label">Oynat</span>
+        </button>
       </div>
       <p class="media-status" id="media-status" role="status" aria-live="polite"></p>
-    </section>
-
-    <section class="album-section" id="album" aria-labelledby="album-title">
-      <div class="section-kicker"><span>Bir albümün hikâyesi</span><span>Sena Şener</span></div>
-      <div class="album-layout">
-        <div class="record-column">
-          <div class="record-caption"><span>Sena Şener</span><span>Albümden parçalar</span></div>
-          <!-- The original site's vinyl motif and artist label, retained as the album's visual thread. -->
-          <div class="hero-record" aria-hidden="true">
-            <div class="disc">
-              <div class="grooves"></div>
-              <div class="hr-label"><img src="assets/logo.png" width="800" height="800" alt="" loading="lazy"></div>
-            </div>
-          </div>
-          <p class="record-footnote">Her şarkıda yeni bir hikâye.</p>
-        </div>
-        <div class="album-copy">
-          <p class="eyebrow">Yeni albüm</p>
-          <h2 id="album-title">Şarkı şarkı,<br>bir albüm.</h2>
-          <p class="album-intro">Bir anda değil, şarkı şarkı. Sena Şener'in yeni albümü her yeni parçayla biraz daha açılıyor.</p>
-          <div class="track-list" aria-label="Albümden paylaşılan şarkılar">
-            <article class="track">
-              <div><p class="track-status">Yayında</p><h3>Aşkından Ölmemeli</h3><time datetime="2026-08-07">07 Ağustos 2026</time></div>
-              <a class="track-link" href="#dinle" aria-label="Aşkından Ölmemeli — dinleme bağlantıları">Dinle <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="track track-current">
-              <div><p class="track-status" id="new-track-status">Yeni şarkı · 11 Eylül'de</p><h3>Alışılır mı Aşka</h3><time datetime="2026-09-11">11 Eylül 2026</time></div>
-              <a class="track-link" id="new-track-link" href="#release-title" aria-label="Alışılır mı Aşka — yayın bilgisi"><span id="new-track-link-label">Keşfet</span> <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-          <p class="album-note">Hikâye, yeni şarkılarla devam edecek.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="listen-section" id="dinle" aria-labelledby="listen-title">
-      <div class="listen-copy"><p class="eyebrow">Müzikle kal</p><h2 id="listen-title">İğneyi bırak.<br>Kendini müziğe.</h2><p>Sena Şener'in sanatçı sayfaları</p></div>
-      <div class="platforms">
-        <a href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer"><span><span class="platform-type">Dinle & takip et</span>Spotify</span><span aria-hidden="true">↗</span><span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-        <a href="https://music.apple.com/tr/artist/sena-%C5%9Fener/1084577486" target="_blank" rel="noopener noreferrer"><span><span class="platform-type">Dinle</span>Apple Music</span><span aria-hidden="true">↗</span><span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-        <a href="https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ" target="_blank" rel="noopener noreferrer"><span><span class="platform-type">İzle & dinle</span>YouTube</span><span aria-hidden="true">↗</span><span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-wordmark" aria-label="Sena Şener">Sena Şener</div>
-    <div class="footer-bottom"><p>© 2026 Sena Şener</p><img src="assets/logo.png" width="42" height="42" alt="" loading="lazy"><a href="#top">Başa dön ↑</a></div>
-  </footer>
+    </footer>
+  </div>
 </body>
 </html>
