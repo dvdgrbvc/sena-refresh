@@ -18,8 +18,8 @@
       countdown.hidden = true;
       releaseStatus.textContent = 'Şimdi yayında';
       document.getElementById('release-time').hidden = true;
-      document.getElementById('pre-release-link').hidden = true;
-      document.getElementById('listen-links').hidden = false;
+      // Only the second song changes state. Album listening links are always available.
+      document.body.classList.toggle('track-released', true);
       window.clearInterval(releaseTimer);
       return;
     }

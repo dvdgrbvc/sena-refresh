@@ -23,20 +23,14 @@
       </video>
     </div>
 
-    <!-- Retained vinyl and artist label, now part of the backdrop rather than another section. -->
-    <div class="hero-record" aria-hidden="true">
-      <div class="disc">
-        <div class="grooves"></div>
-        <div class="hr-label"><img src="assets/logo.png" width="800" height="800" alt=""></div>
-      </div>
-    </div>
-
     <header class="site-header">
       <p class="wordmark">Sena Şener</p>
+      <p class="album-status">Albüm yayında</p>
     </header>
 
     <main id="main" class="release" aria-labelledby="release-title">
       <div class="release-content">
+        <p class="release-number"><span>02</span> Yeni şarkı</p>
         <h1 id="release-title"><span>Alışılır mı</span> <span class="title-last">Aşka</span></h1>
 
         <div class="release-info">
@@ -54,20 +48,33 @@
             <div class="countdown-unit"><span data-unit="seconds">00</span><span class="countdown-label">saniye</span></div>
           </div>
 
-          <a class="artist-link" id="pre-release-link" href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer">Spotify'da Sena Şener<span class="sr-only"> — yeni sekmede açılır</span></a>
-
-          <div class="listen-links" id="listen-links" hidden>
-            <nav class="platforms" aria-label="Sena Şener — dinleme bağlantıları">
-              <a class="platform-primary" href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer">Spotify<span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-              <a href="https://music.apple.com/tr/artist/sena-%C5%9Fener/1084577486" target="_blank" rel="noopener noreferrer">Apple Music<span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-              <a href="https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-            </nav>
-          </div>
         </div>
       </div>
+      <figure class="record-display">
+        <div class="hero-record" aria-hidden="true">
+          <div class="disc">
+            <div class="grooves"></div>
+            <div class="hr-label"><img src="assets/logo.png" width="800" height="800" alt=""></div>
+          </div>
+        </div>
+        <figcaption class="record-caption">
+          <span class="track-number">01</span>
+          <span class="available-track">Aşkından Ölmemeli</span>
+          <span class="track-status">Yayında</span>
+        </figcaption>
+      </figure>
     </main>
 
     <footer class="stage-footer">
+      <!-- Album listening stays available before, during and after the second track's release. -->
+      <nav class="platforms" id="listen-links" aria-label="Sena Şener — dinleme bağlantıları">
+        <a class="platform-primary" id="spotify-link" href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer">
+          <svg class="spotify-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24Zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.36-2.11-10.54-1.16a.75.75 0 0 1-.33-1.46c4.57-1.05 8.49-.6 11.65 1.33.35.21.46.68.25 1.04Zm1.47-3.26a.94.94 0 0 1-1.29.31c-3.22-1.98-8.13-2.55-11.94-1.4a.94.94 0 0 1-.54-1.8c4.35-1.31 9.77-.66 13.46 1.6.44.27.58.85.31 1.29Zm.13-3.4C15.24 8.35 8.88 8.14 5.2 9.26a1.13 1.13 0 1 1-.66-2.16c4.23-1.28 11.26-1.03 15.71 1.61a1.13 1.13 0 0 1-1.15 1.94Z"/></svg>
+          <span>Spotify'da dinle</span><span class="sr-only"> — Sena Şener, yeni sekmede açılır</span>
+        </a>
+        <a href="https://music.apple.com/tr/artist/sena-%C5%9Fener/1084577486" target="_blank" rel="noopener noreferrer">Apple Music<span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
+        <a href="https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
+      </nav>
       <div class="film-controls" id="film-controls" hidden>
         <button id="sound-toggle" type="button" aria-label="Aşkından Ölmemeli videosunun sesi" aria-pressed="false" aria-controls="bgvid">
           <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path class="sound-off" d="m16 9 6 6m0-6-6 6"/><path class="sound-on" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>
