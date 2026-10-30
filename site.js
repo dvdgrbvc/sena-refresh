@@ -1,4 +1,5 @@
 import { site, releases, copy } from './content.mjs';
+import { icons } from './icons.mjs';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -27,7 +28,7 @@ const externalLabel = (label) => `${label} — ${t('newTab')}`;
 function renderReleases() {
   $('#release-rail').innerHTML = releases.map((release, index) => `<button type="button" class="release-button" data-release="${escape(release.id)}" aria-pressed="${index === selected}" aria-controls="hero-copy" aria-label="${escape(`${release.title} — ${t('chooseRelease')}`)}"><img src="${escape(release.cover)}" alt="" width="64" height="64"><span class="release-button-copy"><span class="release-button-top">${number(index)} / ${release.id === site.featuredRelease ? t('latest') : t('out')}</span><span class="release-button-title">${escape(release.title)}</span><span class="release-button-date">${dateLabel(release.date)}</span></span><span class="track-indicator" aria-hidden="true"><i></i><i></i><i></i></span></button>`).join('');
   $('#release-total').textContent = String(releases.length).padStart(2, '0');
-  $('#music-grid').innerHTML = releases.map((release, index) => `<article class="music-card${release.id === site.featuredRelease ? ' featured' : ''}" data-card="${escape(release.id)}"><a class="cover-link" href="${escape(release.spotify)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(externalLabel(`${release.title} — Spotify`))}"><img src="${escape(release.cover)}" alt="${escape(release.title)}" width="600" height="600" loading="lazy"><span class="cover-arrow" aria-hidden="true">↗</span></a><div class="music-card-meta"><span>${number(index)} / ${release.id === site.featuredRelease ? t('latest') : t('out')}</span><time datetime="${release.date}">${dateLabel(release.date)}</time></div><h3>${escape(release.title)}</h3><div class="platform-links">${[['spotify','Spotify'],['apple','Apple Music'],['youtube','YouTube']].map(([key,label]) => `<a href="${escape(release[key])}" target="_blank" rel="noopener noreferrer" aria-label="${escape(externalLabel(`${release.title} — ${label}`))}">${label}<span aria-hidden="true">↗</span></a>`).join('')}</div></article>`).join('');
+  $('#music-grid').innerHTML = releases.map((release, index) => `<article class="music-card${release.id === site.featuredRelease ? ' featured' : ''}" data-card="${escape(release.id)}"><a class="cover-link" href="${escape(release.spotify)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(externalLabel(`${release.title} — Spotify`))}"><img src="${escape(release.cover)}" alt="${escape(release.title)}" width="600" height="600" loading="lazy"><span class="cover-arrow" aria-hidden="true">${icons.arrowUpRight}</span></a><div class="music-card-meta"><span>${number(index)} / ${release.id === site.featuredRelease ? t('latest') : t('out')}</span><time datetime="${release.date}">${dateLabel(release.date)}</time></div><h3>${escape(release.title)}</h3><div class="platform-links">${[['spotify','Spotify'],['apple','Apple Music'],['youtube','YouTube']].map(([key,label]) => `<a href="${escape(release[key])}" target="_blank" rel="noopener noreferrer" aria-label="${escape(externalLabel(`${release.title} — ${label}`))}">${label}<span aria-hidden="true">${icons.arrowUpRight}</span></a>`).join('')}</div></article>`).join('');
 }
 function selectRelease(index, animate = false) {
   selected = (index + releases.length) % releases.length;
@@ -62,7 +63,7 @@ function setLanguage(next) {
   $('#next-release').setAttribute('aria-label', t('next'));
   $$('[data-site-link]').forEach((link) => {
     link.href = site.links[link.dataset.siteLink];
-    link.setAttribute('aria-label', externalLabel(link.textContent.trim().replace('↗','').trim()));
+    link.setAttribute('aria-label', externalLabel(link.textContent.trim().replace(/\s+/g, ' ')));
   });
   renderReleases();
   selectRelease(selected);
@@ -152,7 +153,7 @@ function syncMedia() {
   $('#motion-toggle').setAttribute('aria-pressed', String(playing));
   $('#motion-toggle').setAttribute('aria-label', playing ? t('pause') : t('play'));
   $('#motion-label').textContent = playing ? t('pause') : t('play');
-  $('#motion-icon').textContent = playing ? 'Ⅱ' : '▶';
+  $('#motion-icon').innerHTML = playing ? icons.pause : icons.play;
   $('#sound-toggle').setAttribute('aria-pressed', String(audible));
   $('#sound-toggle').setAttribute('aria-label', `${audible ? t('soundOff') : t('soundOn')} — ${site.film.title}`);
   $('#sound-label').textContent = audible ? t('soundOff') : t('soundOn');

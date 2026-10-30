@@ -2,6 +2,7 @@ import { readFile, writeFile, access, cp, mkdir, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
 import { site, releases, copy } from '../content.mjs';
+import { icons } from '../icons.mjs';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const esc = (value) => String(value).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const date = (value) => new Intl.DateTimeFormat('tr-TR', {day:'2-digit',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(`${value}T12:00:00Z`));
@@ -15,6 +16,9 @@ for (const release of releases) {
 }
 for (const url of Object.values(site.links)) if (new URL(url).protocol !== 'https:') throw new Error('HTTPS required for site links.');
 const values = {
+  ICON_ARROW_UP_RIGHT: icons.arrowUpRight,
+  ICON_ARROW_LEFT: icons.arrowLeft, ICON_ARROW_RIGHT: icons.arrowRight,
+  ICON_PLAY: icons.play,
   POSTER_SRC: esc(site.film.poster), FILM_SRC: esc(site.film.src),
   PAGE_TITLE: esc(`${site.artist} — ${featured.title} · Resmî web sitesi`),
   DESCRIPTION: esc(`${site.artist}. ${releases.map((release) => release.title).join(', ')}. Yeni müzikler, konserler ve booking.`),
@@ -41,7 +45,7 @@ if (process.argv.includes('--check')) {
   const output = resolve(root, 'dist');
   await rm(output, { recursive:true, force:true });
   await mkdir(output, { recursive:true });
-  for (const file of ['index.html','styles.css','site.js','content.mjs','assets']) {
+  for (const file of ['index.html','styles.css','site.js','content.mjs','icons.mjs','assets']) {
     await cp(resolve(root,file),resolve(output,file),{recursive:true});
   }
   console.log(`Built index.html with ${featured.title} as the featured release.`);
