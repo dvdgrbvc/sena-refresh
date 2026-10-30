@@ -8,11 +8,9 @@ export const site = {
     youtube: 'https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ',
     instagram: 'https://www.instagram.com/sena.sener/',
     concerts: 'https://www.bubilet.com.tr/sanatci/sena-sener',
-    press: 'https://presskit.senasener.com/', media: 'https://mediakit.senasener.com/',
-    pressPdf: 'https://mediakit.senasener.com/SenaSener_PressKit_2026.pdf',
   },
-  // Keep the campaign portrait as the first impression. The retained film is one click away.
-  film: { src: 'assets/teaser.mp4', poster: 'assets/poster.jpg', title: 'Aşkından Ölmemeli', autoplay: false },
+  // Start muted; the first click or tap enables sound within the browser's gesture rules.
+  film: { src: 'assets/teaser.mp4', poster: 'assets/poster.jpg', title: 'Aşkından Ölmemeli', autoplay: true },
 };
 export const releases = [
   {
@@ -45,28 +43,24 @@ export const releases = [
 ];
 export const copy = {
   tr: {
-    skip:'İçeriğe geç', home:'Ana sayfa', nav:'Ana menü', music:'Müzik', live:'Live', press:'Basın', booking:'Booking',
+    skip:'İçeriğe geç', home:'Ana sayfa', nav:'Ana menü', music:'Müzik', live:'Live', booking:'Booking',
     eraLabel:'Yeni bir dönem', artistLabel:'Sena Şener · Yeni albümden', latest:'Yeni tekli', out:'Şimdi yayında',
     listen:'Şimdi dinle', releases:'Albümden şarkılar', allMusic:'Tüm müzikler', chooseRelease:'Şarkıyı keşfet', previous:'Önceki şarkı', next:'Sonraki şarkı',
     filmLabel:'Albüm dünyasından', pause:'Filmi duraklat', play:'Filmi oynat', soundOn:'Film sesini aç', soundOff:'Film sesini kapat', soundCredit:'Film: Aşkından Ölmemeli', close:'Kapat',
     musicEyebrow:'Aşkından Ölmemeli · Albümden', musicTitle:'Şarkı şarkı, bir dünya.', musicIntro:'Her şarkıda biraz daha açılan bir hikâye. İstediğin yerden başla.',
     catalogue:'Bütün şarkılar', catalogueNote:'Sena Şener’in müzik dünyası',
-    liveEyebrow:'Sena Şener · Sahnede', liveTitle:'Aynı şarkıda.\nAynı yerde.', liveIntro:'Birlikte söylemek için. Güncel konser tarihleri ve biletler burada.', tickets:'Konserler & biletler', ticketsNote:'Güncel program · Bubilet', liveFollow:'Sahneden, stüdyodan, hayattan.', follow:'Instagram’da takip et',
-    pressEyebrow:'Basın & medya', pressTitle:'Sesin\narkasındaki dünya.', pressIntro:'Şarkıcı, söz yazarı ve prodüktör. Sena Şener’in yeni döneminde retro pop ve soul, Anadolu melodileriyle buluşuyor.',
-    pressKit:'Basın kiti', pressKitNote:'Biyografi & sanatçı hikâyesi', mediaKit:'Medya kiti', mediaKitNote:'Basın fotoğrafları & görsel kimlik', download:'Basın kitini indir', photoCredit:'Fotoğraf: Sena Şener arşivi',
-    bookingEyebrow:'Booking & iletişim', bookingTitle:'Birlikte\nbir şeyler.', bookingIntro:'Konserler, festivaller, iş birlikleri ve yeni hikâyeler için.', management:'Menajerlik · Basın · Booking', contactNote:'Konser ve etkinlik taleplerinde tarih, şehir ve mekân bilgilerini paylaşabilirsin.',
+    liveTitle:'Konserler', tickets:'Tarihler & biletler',
+    bookingTitle:'Booking & iletişim', management:'Menajerlik & booking',
     newTab:'yeni sekmede açılır', mediaError:'Film şu an oynatılamıyor. Müziğe dinleme bağlantılarından ulaşabilirsin.',
   },
   en: {
-    skip:'Skip to content', home:'Home', nav:'Main navigation', music:'Music', live:'Live', press:'Press', booking:'Booking',
+    skip:'Skip to content', home:'Home', nav:'Main navigation', music:'Music', live:'Live', booking:'Booking',
     eraLabel:'A new chapter', artistLabel:'Sena Şener · From the new album', latest:'Latest single', out:'Out now',
     listen:'Listen now', releases:'From the new album', allMusic:'All music', chooseRelease:'Explore this release', previous:'Previous release', next:'Next release',
     filmLabel:'Inside the album', pause:'Pause the film', play:'Play the film', soundOn:'Unmute the film', soundOff:'Mute the film', soundCredit:'Film: Aşkından Ölmemeli', close:'Close',
     musicEyebrow:'Aşkından Ölmemeli · The new chapter', musicTitle:'Song by song, a world.', musicIntro:'A story unfolding with every song. Start wherever you feel.', catalogue:'The full catalogue', catalogueNote:'The world of Sena Şener',
-    liveEyebrow:'Sena Şener · On stage', liveTitle:'The same song.\nThe same room.', liveIntro:'Made to be sung together. Find upcoming shows and tickets here.', tickets:'Shows & tickets', ticketsNote:'Current listings · Bubilet', liveFollow:'On stage. In the studio. In between.', follow:'Follow on Instagram',
-    pressEyebrow:'Press & media', pressTitle:'The world\nbehind the voice.', pressIntro:'Singer, songwriter and producer. Sena Şener’s new chapter brings the warmth of retro pop and soul together with Anatolian melodies.',
-    pressKit:'Press kit', pressKitNote:'Biography & artist story', mediaKit:'Media kit', mediaKitNote:'Press photography & visual identity', download:'Download the press kit', photoCredit:'Photography: Courtesy of Sena Şener',
-    bookingEyebrow:'Booking & contact', bookingTitle:'Let’s make\nsomething happen.', bookingIntro:'For concerts, festivals, collaborations and new stories.', management:'Management · Press · Booking', contactNote:'For live enquiries, please include the proposed date, city and venue.',
+    liveTitle:'Concerts', tickets:'Dates & tickets',
+    bookingTitle:'Booking & contact', management:'Management & booking',
     newTab:'opens in a new tab', mediaError:'The film is currently unavailable. You can still listen through the music links.',
   },
 };

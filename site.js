@@ -7,9 +7,8 @@ const number = (i) => String(i + 1).padStart(2, '0');
 const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const video = $('#bgvid');
 const dialog = $('#overlay');
-const panelNames = ['music', 'live', 'press', 'booking'];
+const panelNames = ['music', 'live', 'booking'];
 let language = 'tr';
-try { if (localStorage.getItem('sena-language') === 'en') language = 'en'; } catch { /* Storage is optional. */ }
 let selected = Math.max(0, releases.findIndex((release) => release.id === site.featuredRelease));
 let currentPanel = null;
 let returnFocus = null;
@@ -19,6 +18,7 @@ let resumeAfterVisibility = false;
 let mediaFailed = false;
 let playAttempt = 0;
 let userPaused = false;
+let firstInteractionSound = true;
 let heroAnimation;
 const t = (key) => copy[language][key];
 const dateLabel = (value) => new Intl.DateTimeFormat(language === 'tr' ? 'tr-TR' : 'en-GB', { day:'2-digit', month:'long', year:'numeric', timeZone:'UTC' }).format(new Date(`${value}T12:00:00Z`));
@@ -54,7 +54,6 @@ function selectRelease(index, animate = false) {
 function setLanguage(next) {
   language = next;
   document.documentElement.lang = next;
-  try { localStorage.setItem('sena-language', next); } catch { /* Continue without persistence. */ }
   $$('[data-i18n]').forEach((element) => { element.textContent = t(element.dataset.i18n); });
   $$('[data-language]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.language === next)));
   $$('[data-nav-label]').forEach((nav) => nav.setAttribute('aria-label', t('nav')));
@@ -79,7 +78,7 @@ function openPanel(name) {
   dialog.classList.remove('is-closing');
   if (!dialog.open) {
     returnFocus = document.activeElement;
-    resumeAfterOverlay = !video.paused && video.muted;
+    resumeAfterOverlay = !video.paused || (canAutoplay() && !userPaused);
     pauseVideo();
   }
   currentPanel = name;
@@ -144,7 +143,9 @@ $('#next-release').addEventListener('click', () => selectRelease(selected + 1, t
 $$('[data-language]').forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
 
 // The film is from Aşkından Ölmemeli, independent of the selected single.
-// Sound is opt-in. Reduced motion and data saving leave the poster in place.
+// Start muted, then enable sound synchronously in the first real click/tap.
+// Reduced motion and data saving leave the poster until a media control is used.
+function canAutoplay() { return site.film.autoplay && !motion.matches && !navigator.connection?.saveData; }
 function syncMedia() {
   const playing = !video.paused && !video.ended;
   const audible = playing && !video.muted;
@@ -166,20 +167,44 @@ async function playVideo() {
     $('#media-status').textContent = '';
   } catch {
     if (attempt !== playAttempt) return;
+    const retryMuted = !video.muted;
     video.muted = true;
-    // Autoplay rejection is normal; the play control remains available.
+    // Keep the film moving if a browser rejects audible playback.
+    if (retryMuted && !document.hidden && !dialog.open) {
+      try { await video.play(); } catch { /* The play control remains available. */ }
+      if (attempt !== playAttempt) return;
+    }
   }
   syncMedia();
 }
 function pauseVideo() { ++playAttempt; video.pause(); syncMedia(); }
 $('#motion-toggle').addEventListener('click', () => {
   userPaused = !video.paused;
+  if (!userPaused && firstInteractionSound) video.muted = false;
+  firstInteractionSound = false;
   if (video.paused) playVideo(); else pauseVideo();
 });
 $('#sound-toggle').addEventListener('click', () => {
+  firstInteractionSound = false;
   if (!video.muted && !video.paused) { video.muted = true; syncMedia(); }
   else { video.muted = false; userPaused = false; playVideo(); }
 });
+function enableSoundOnInteraction(event) {
+  if (!firstInteractionSound || !event.isTrusted || mediaFailed || userPaused || document.hidden || !canAutoplay()) return;
+  // Explicit media controls own their action; never turn a mute/pause click into sound.
+  if (event.target instanceof Element && event.target.closest('#sound-toggle, #motion-toggle')) return;
+  if (event.type === 'keydown' && !['Enter', ' '].includes(event.key)) return;
+  if (event.metaKey || event.ctrlKey || event.altKey || event.repeat) return;
+  firstInteractionSound = false;
+  video.muted = false;
+  if (dialog.open) {
+    // Overlays stay quiet; continue with sound when returning to the stage.
+    resumeAfterOverlay = true;
+    syncMedia();
+  } else playVideo();
+}
+document.addEventListener('click', enableSoundOnInteraction, { capture:true });
+document.addEventListener('keydown', enableSoundOnInteraction, { capture:true });
 ['playing','pause','volumechange','ended'].forEach((event) => video.addEventListener(event, syncMedia));
 video.addEventListener('playing', () => video.classList.add('ready'));
 function mediaError() {
@@ -194,7 +219,7 @@ video.addEventListener('error', mediaError);
 $('source', video).addEventListener('error', mediaError);
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
-    resumeAfterVisibility = !video.paused && video.muted;
+    resumeAfterVisibility = !video.paused;
     pauseVideo();
   } else {
     if (resumeAfterVisibility && !motion.matches && !dialog.open && !userPaused) playVideo();
@@ -214,4 +239,4 @@ video.muted = true;
 $('#film-controls').hidden = false;
 setLanguage(language);
 route();
-if (site.film.autoplay && !motion.matches && !navigator.connection?.saveData && !document.hidden && !dialog.open) playVideo();
+if (canAutoplay() && !document.hidden && !dialog.open) playVideo();

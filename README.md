@@ -1,6 +1,6 @@
 # Sena Şener — new era
 
-A non-scrolling artist homepage with the existing espresso, cream and orange palette, Volina font, monogram and film. Three original single covers open into a single full-screen experience: Music, Live, Press and Booking. Turkish is the default; English can be selected and is remembered locally.
+A non-scrolling artist homepage with the existing espresso, cream and orange palette, Volina font, monogram and film. Three original single covers open into a single full-screen experience: Music, Live and Booking. Every page load starts in Turkish; English can be selected for the current visit.
 
 ## Update the next release
 
@@ -28,11 +28,11 @@ The preview listens on port 3000, or `PORT` / `--port` when supplied. Production
 ## Interaction and accessibility
 
 - Release selection is manual; nothing automatically changes the featured song while reading.
-- Full-screen native dialogs contain keyboard focus, support Escape, restore focus, and integrate with browser Back/Forward. `#music`, `#live`, `#press`, `#booking` also work as direct links.
+- Full-screen native dialogs contain keyboard focus, support Escape, restore focus, and integrate with browser Back/Forward. `#music`, `#live`, `#booking` also work as direct links.
 - The homepage stays within the viewport; overlays can scroll when needed on small screens or at browser zoom.
-- The first impression is the campaign portrait; the retained film starts on request. Audio is opt-in and labelled **Aşkından Ölmemeli**, independent of the selected single. The film pauses behind overlays and in background tabs. If `site.film.autoplay` is enabled for a later campaign, reduced-motion and data-saving preferences still keep the poster until Play is requested.
+- The film autoplays muted behind the page. The first click/tap (or Enter/Space interaction) enables its sound; mouse movement alone cannot unlock browser audio. Explicit mute and pause choices take priority over subsequent interactions. Audio is labelled **Aşkından Ölmemeli**, independent of the selected single. The film pauses behind overlays and in background tabs, then resumes with the chosen sound state. Reduced-motion and data-saving preferences keep the poster until a media control is used. Set `site.film.autoplay` to `false` to disable both autoplay and sound on general page interactions.
 - Artwork, typography and video are served locally. No third-party players, tracking scripts, API credentials or forms are added. Streaming links open the official platforms.
-- A JavaScript-disabled fallback retains the featured release, artwork, streaming, Live, Press and Booking links.
+- A JavaScript-disabled fallback retains the featured release, artwork, streaming, Live and Booking links.
 
 ## Media and content provenance
 
@@ -42,7 +42,7 @@ The preview listens on port 3000, or `PORT` / `--port` when supplied. Production
 - Sev Diyeydi: https://music.apple.com/us/album/sev-diyeydi-single/6816207370 ; Spotify official playlist embed confirmed track `2Zsr7YRskWBBX7ndWpxflo`.
 - YouTube oEmbed confirmed the Sena Şener channel and titles for the Alışılır mı Aşka visualizer and Sev Diyeydi official audio.
 - Press portrait: https://mediakit.senasener.com/press-photos/SenaSener_press_02_redstudio.jpg ; credit: Courtesy of Sena Şener / Sena Şener arşivi.
-- Management contact and press resources: the existing https://mediakit.senasener.com/ page.
+- Management contact: the existing https://mediakit.senasener.com/ page.
 - Live listings: https://www.bubilet.com.tr/sanatci/sena-sener
 
 Verified during the 30 October 2026 refresh. Rights to the supplied artist assets remain with their respective owners.

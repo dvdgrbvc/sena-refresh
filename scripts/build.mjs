@@ -17,7 +17,7 @@ for (const url of Object.values(site.links)) if (new URL(url).protocol !== 'http
 const values = {
   POSTER_SRC: esc(site.film.poster), FILM_SRC: esc(site.film.src),
   PAGE_TITLE: esc(`${site.artist} — ${featured.title} · Resmî web sitesi`),
-  DESCRIPTION: esc(`${site.artist}. ${releases.map((release) => release.title).join(', ')}. Yeni müzikler, konserler, basın ve booking.`),
+  DESCRIPTION: esc(`${site.artist}. ${releases.map((release) => release.title).join(', ')}. Yeni müzikler, konserler ve booking.`),
   COVER_URL: esc(new URL(featured.cover, site.url).href),
   RELEASE_TITLE: esc(featured.title),
   TITLE_LINES: featured.lines.map((line) => `<span>${esc(line)}</span>`).join(''),
