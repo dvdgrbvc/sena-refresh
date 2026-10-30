@@ -45,21 +45,21 @@
       <h1 id="release-title">{{TITLE_LINES}}</h1>
       <p class="release-note" id="release-note">{{RELEASE_NOTE}}</p>
       <div class="release-meta"><span class="status-dot" aria-hidden="true"></span><span data-i18n="out">Şimdi yayında</span><span class="meta-divider" aria-hidden="true">/</span><time id="release-date" datetime="{{RELEASE_DATE}}">{{DATE_LABEL}}</time></div>
-      <div class="hero-actions"><a class="button button-primary" href="#music" data-open="music"><span class="play-icon" aria-hidden="true">▶</span><span data-i18n="listen">Şimdi dinle</span><span class="button-arrow" aria-hidden="true">↗</span></a><a class="text-link" id="watch-link" href="{{YOUTUBE_URL}}" target="_blank" rel="noopener noreferrer"><span id="watch-label">{{WATCH_LABEL}}</span><span aria-hidden="true">↗</span></a></div>
+      <div class="hero-actions"><a class="button button-primary" href="#music" data-open="music"><span class="play-icon" aria-hidden="true">{{ICON_PLAY}}</span><span data-i18n="listen">Şimdi dinle</span><span class="button-arrow" aria-hidden="true">{{ICON_ARROW_UP_RIGHT}}</span></a><a class="text-link" id="watch-link" href="{{YOUTUBE_URL}}" target="_blank" rel="noopener noreferrer"><span id="watch-label">{{WATCH_LABEL}}</span><span aria-hidden="true">{{ICON_ARROW_UP_RIGHT}}</span></a></div>
     </div>
     <div class="chapter-tag" aria-hidden="true"><span data-i18n="eraLabel">Yeni bir dönem</span><span class="chapter-year">20<br>26</span></div>
     <div class="film-caption"><span class="caption-rule" aria-hidden="true"></span><span data-i18n="filmLabel">Albüm dünyasından</span><span>Aşkından Ölmemeli</span></div>
-    <div class="release-pagination"><span class="release-count"><span id="current-number">{{RELEASE_NUMBER}}</span><span class="count-line" aria-hidden="true"></span><span id="release-total">{{RELEASE_TOTAL}}</span></span><button type="button" id="previous-release" aria-label="Önceki şarkı">←</button><button type="button" id="next-release" aria-label="Sonraki şarkı">→</button></div>
+    <div class="release-pagination"><span class="release-count"><span id="current-number">{{RELEASE_NUMBER}}</span><span class="count-line" aria-hidden="true"></span><span id="release-total">{{RELEASE_TOTAL}}</span></span><button type="button" id="previous-release" aria-label="Önceki şarkı">{{ICON_ARROW_LEFT}}</button><button type="button" id="next-release" aria-label="Sonraki şarkı">{{ICON_ARROW_RIGHT}}</button></div>
   </main>
   <section class="release-shelf" aria-labelledby="shelf-title">
-    <div class="shelf-heading"><h2 id="shelf-title"><span class="shelf-star" aria-hidden="true">✳</span><span data-i18n="releases">Albümden şarkılar</span><span class="shelf-era"> / Aşkından Ölmemeli</span></h2><a href="#music" data-open="music"><span data-i18n="allMusic">Tüm müzikler</span><span aria-hidden="true">↗</span></a></div>
+    <div class="shelf-heading"><h2 id="shelf-title"><span class="shelf-star" aria-hidden="true">✳</span><span data-i18n="releases">Albümden şarkılar</span><span class="shelf-era"> / Aşkından Ölmemeli</span></h2><a href="#music" data-open="music"><span data-i18n="allMusic">Tüm müzikler</span><span aria-hidden="true">{{ICON_ARROW_UP_RIGHT}}</span></a></div>
     <div class="release-rail" id="release-rail">{{RELEASE_RAIL}}</div>
   </section>
   <footer class="site-footer">
     <p class="footer-copyright">© <span data-year>2026</span> Sena Şener</p>
-    <div class="social-links"><a data-site-link="instagram" href="https://www.instagram.com/sena.sener/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a data-site-link="spotify" href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a data-site-link="youtube" href="https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div>
+    <div class="social-links"><a data-site-link="instagram" href="https://www.instagram.com/sena.sener/" target="_blank" rel="noopener noreferrer">Instagram {{ICON_ARROW_UP_RIGHT}}</a><a data-site-link="spotify" href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer">Spotify {{ICON_ARROW_UP_RIGHT}}</a><a data-site-link="youtube" href="https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ" target="_blank" rel="noopener noreferrer">YouTube {{ICON_ARROW_UP_RIGHT}}</a></div>
     <div class="film-controls" id="film-controls" hidden>
-      <button type="button" id="motion-toggle" aria-controls="bgvid" aria-pressed="false" aria-label="Filmi oynat"><span id="motion-icon" aria-hidden="true">▶</span><span class="motion-label" id="motion-label">Filmi oynat</span></button><span class="control-divider" aria-hidden="true"></span>
+      <button type="button" id="motion-toggle" aria-controls="bgvid" aria-pressed="false" aria-label="Filmi oynat"><span id="motion-icon" aria-hidden="true">{{ICON_PLAY}}</span><span class="motion-label" id="motion-label">Filmi oynat</span></button><span class="control-divider" aria-hidden="true"></span>
       <button type="button" id="sound-toggle" aria-controls="bgvid" aria-pressed="false" aria-describedby="sound-credit"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path id="sound-wave" d="m16 9 6 6m0-6-6 6"/></svg><span id="sound-label">Film sesini aç</span></button><span id="sound-credit" class="sr-only" data-i18n="soundCredit">Film: Aşkından Ölmemeli</span>
     </div>
   </footer>
@@ -76,14 +76,14 @@
       <section class="panel music-panel" data-panel="music" hidden>
         <div class="panel-heading"><p class="eyebrow" data-i18n="musicEyebrow">Aşkından Ölmemeli · Albümden</p><h2 id="music-title" tabindex="-1" data-i18n="musicTitle">Şarkı şarkı, bir dünya.</h2><p class="panel-intro" data-i18n="musicIntro">Her şarkıda biraz daha açılan bir hikâye. İstediğin yerden başla.</p></div>
         <div class="music-grid" id="music-grid"></div>
-        <div class="catalogue"><div><p class="eyebrow" data-i18n="catalogueNote">Sena Şener’in müzik dünyası</p><h3 data-i18n="catalogue">Bütün şarkılar</h3></div><div class="catalogue-links"><a data-site-link="spotify" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a data-site-link="apple" target="_blank" rel="noopener noreferrer">Apple Music ↗</a><a data-site-link="youtube" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div>
+        <div class="catalogue"><div><p class="eyebrow" data-i18n="catalogueNote">Sena Şener’in müzik dünyası</p><h3 data-i18n="catalogue">Bütün şarkılar</h3></div><div class="catalogue-links"><a data-site-link="spotify" target="_blank" rel="noopener noreferrer">Spotify {{ICON_ARROW_UP_RIGHT}}</a><a data-site-link="apple" target="_blank" rel="noopener noreferrer">Apple Music {{ICON_ARROW_UP_RIGHT}}</a><a data-site-link="youtube" target="_blank" rel="noopener noreferrer">YouTube {{ICON_ARROW_UP_RIGHT}}</a></div></div>
       </section>
       <section class="panel split-panel live-panel" data-panel="live" hidden>
         <div class="panel-copy">
           <p class="eyebrow">Sena Şener</p>
           <h2 id="live-title" tabindex="-1" data-i18n="liveTitle">Konserler</h2>
-          <a class="editorial-link" data-site-link="concerts" target="_blank" rel="noopener noreferrer"><span><small>Bubilet</small> <span data-i18n="tickets">Tarihler & biletler</span></span><span aria-hidden="true">↗</span></a>
-          <a class="text-link live-instagram" data-site-link="instagram" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span aria-hidden="true">↗</span></a>
+          <a class="editorial-link" data-site-link="concerts" target="_blank" rel="noopener noreferrer"><span><small>Bubilet</small> <span data-i18n="tickets">Tarihler & biletler</span></span><span aria-hidden="true">{{ICON_ARROW_UP_RIGHT}}</span></a>
+          <a class="text-link live-instagram" data-site-link="instagram" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span aria-hidden="true">{{ICON_ARROW_UP_RIGHT}}</span></a>
         </div>
         <figure class="panel-photo live-photo"><img src="assets/press-portrait.jpg" alt="Sena Şener" width="952" height="1288" loading="lazy"><figcaption><span>Sena Şener</span><span>Live</span></figcaption></figure>
       </section>
@@ -91,7 +91,7 @@
         <div class="panel-copy">
           <p class="eyebrow">Sena Şener</p>
           <h2 id="booking-title" tabindex="-1" data-i18n="bookingTitle">Booking & iletişim</h2>
-          <div class="contact-block"><p class="eyebrow" data-i18n="management">Menajerlik & booking</p><a class="contact-email" id="contact-email" href="mailto:management@senasener.com"><span>management@senasener.com</span><span aria-hidden="true">↗</span></a></div>
+          <div class="contact-block"><p class="eyebrow" data-i18n="management">Menajerlik & booking</p><a class="contact-email" id="contact-email" href="mailto:management@senasener.com"><span>management@senasener.com</span><span aria-hidden="true">{{ICON_ARROW_UP_RIGHT}}</span></a></div>
         </div>
         <figure class="panel-photo booking-photo"><img src="assets/press-portrait.jpg" alt="Sena Şener" width="952" height="1288" loading="lazy"><figcaption>Sena Şener</figcaption></figure>
       </section>
@@ -99,6 +99,6 @@
     <footer class="overlay-footer"><span>© <span data-year>2026</span> Sena Şener</span><span data-i18n="eraLabel">Yeni bir dönem</span><img src="assets/logo.png" width="24" height="24" alt=""></footer>
   </div>
 </dialog>
-<noscript><style>.hero-actions [data-open],.main-nav,.language,.release-pagination,.shelf-heading>a{display:none}.release-button{pointer-events:none}.noscript-links{position:fixed;z-index:30;bottom:0;inset-inline:0;background:#27150f;padding:12px;display:flex;flex-wrap:wrap;gap:16px;font-size:12px}</style><nav class="noscript-links" aria-label="Bağlantılar"><a href="{{SPOTIFY_URL}}">{{RELEASE_TITLE}} · Spotify ↗</a><a href="https://www.bubilet.com.tr/sanatci/sena-sener">Konserler ↗</a><a href="mailto:management@senasener.com">Booking ↗</a></nav></noscript>
+<noscript><style>.hero-actions [data-open],.main-nav,.language,.release-pagination,.shelf-heading>a{display:none}.release-button{pointer-events:none}.noscript-links{position:fixed;z-index:30;bottom:0;inset-inline:0;background:#27150f;padding:12px;display:flex;flex-wrap:wrap;gap:16px;font-size:12px}</style><nav class="noscript-links" aria-label="Bağlantılar"><a href="{{SPOTIFY_URL}}">{{RELEASE_TITLE}} · Spotify {{ICON_ARROW_UP_RIGHT}}</a><a href="https://www.bubilet.com.tr/sanatci/sena-sener">Konserler {{ICON_ARROW_UP_RIGHT}}</a><a href="mailto:management@senasener.com">Booking {{ICON_ARROW_UP_RIGHT}}</a></nav></noscript>
 </body>
 </html>
