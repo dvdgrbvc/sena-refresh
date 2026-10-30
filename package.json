@@ -1,0 +1,11 @@
+{
+  "name": "sena-refresh",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "check": "node --check site.js && node --check content.mjs && node scripts/build.mjs --check"
+  }
+}

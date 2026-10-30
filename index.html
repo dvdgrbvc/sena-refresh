@@ -1,123 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#27150f">
-  <title>Sena Şener — Alışılır mı Aşka</title>
-  <meta name="description" content="Sena Şener — Alışılır mı Aşka, 11 Eylül 2026. Şarkı şarkı açılan bir albüm. Yeni müzikler ve dinleme bağlantıları.">
-  <meta property="og:title" content="Sena Şener — Alışılır mı Aşka">
-  <meta property="og:description" content="Alışılır mı Aşka · 11 Eylül 2026. Şarkı şarkı açılan bir albüm.">
-  <meta property="og:image" content="assets/logo.png">
+  <title>Sena Şener — Sev Diyeydi · Resmî web sitesi</title>
+  <meta name="description" content="Sena Şener. Aşkından Ölmemeli, Alışılır mı Aşka, Sev Diyeydi. Yeni müzikler, konserler, basın ve booking.">
+  <link rel="canonical" href="https://www.senasener.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Sena Şener — Sev Diyeydi · Resmî web sitesi">
+  <meta property="og:description" content="Sena Şener. Aşkından Ölmemeli, Alışılır mı Aşka, Sev Diyeydi. Yeni müzikler, konserler, basın ve booking.">
+  <meta property="og:url" content="https://www.senasener.com/">
+  <meta property="og:image" content="https://www.senasener.com/assets/releases/sev-diyeydi.jpg">
+  <meta property="og:image:alt" content="Sev Diyeydi — Sena Şener">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sena Şener — Sev Diyeydi · Resmî web sitesi">
+  <meta name="twitter:description" content="Sena Şener. Aşkından Ölmemeli, Alışılır mı Aşka, Sev Diyeydi. Yeni müzikler, konserler, basın ve booking.">
+  <meta name="twitter:image" content="https://www.senasener.com/assets/releases/sev-diyeydi.jpg">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/Volina.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/poster.jpg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
-  <script src="site.js" defer></script>
+  <script type="module" src="site.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://www.senasener.com/#artist","name":"Sena Şener","url":"https://www.senasener.com/","jobTitle":"Singer, songwriter and producer","sameAs":["https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM","https://music.apple.com/tr/artist/sena-%C5%9Fener/992280338","https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ","https://www.instagram.com/sena.sener/"]},{"@type":"MusicRecording","name":"Aşkından Ölmemeli","datePublished":"2026-08-07","byArtist":{"@id":"https://www.senasener.com/#artist"},"image":"https://www.senasener.com/assets/releases/askindan-olmemeli.jpg","sameAs":["https://open.spotify.com/album/1jWoqxbnvWtu1qEocnE3yM","https://music.apple.com/tr/album/a%C5%9Fk%C4%B1ndan-%C3%B6lmemeli-single/1832119467","https://www.youtube.com/watch?v=Ftbx90wLdq0"]},{"@type":"MusicRecording","name":"Alışılır mı Aşka","datePublished":"2026-09-11","byArtist":{"@id":"https://www.senasener.com/#artist"},"image":"https://www.senasener.com/assets/releases/alisilir-mi-aska.jpg","sameAs":["https://open.spotify.com/track/7fjvSBdeQlJW3eN0wc1IeQ","https://music.apple.com/tr/album/al%C4%B1%C5%9F%C4%B1l%C4%B1r-m%C4%B1-a%C5%9Fka-single/6802358846","https://www.youtube.com/watch?v=nlsqm1eP7KA"]},{"@type":"MusicRecording","name":"Sev Diyeydi","datePublished":"2026-10-23","byArtist":{"@id":"https://www.senasener.com/#artist"},"image":"https://www.senasener.com/assets/releases/sev-diyeydi.jpg","sameAs":["https://open.spotify.com/track/2Zsr7YRskWBBX7ndWpxflo","https://music.apple.com/tr/album/sev-diyeydi-single/6816207370","https://www.youtube.com/watch?v=g3uNy61RNt0"]}]}</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">İçeriğe geç</a>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Sena Şener — ana sayfa">
-      <img src="assets/logo.png" width="44" height="44" alt="">
-      <span>Sena Şener</span>
-    </a>
-    <nav aria-label="Ana menü">
-      <a href="#album">Albüm</a>
-      <a href="#dinle">Dinle <span aria-hidden="true">↗</span></a>
-    </nav>
+<a class="skip-link" href="#main" data-i18n="skip">İçeriğe geç</a>
+<div class="stage" id="stage">
+  <div class="film" aria-hidden="true">
+    <img class="film-poster" src="assets/poster.jpg" width="720" height="1280" alt="" fetchpriority="high">
+    <video id="bgvid" muted loop playsinline preload="none" poster="assets/poster.jpg" tabindex="-1"><source src="assets/teaser.mp4" type="video/mp4"></video>
+  </div>
+  <div class="film-shade" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Sena Şener — Ana sayfa"><img src="assets/logo.png" width="44" height="44" alt=""><span>Sena Şener</span></a>
+    <nav class="main-nav" aria-label="Ana menü" data-nav-label><a href="#music" data-open="music" data-i18n="music">Müzik</a><a href="#live" data-open="live" data-i18n="live">Live</a><a href="#press" data-open="press" data-i18n="press">Basın</a><a href="#booking" data-open="booking" data-i18n="booking">Booking</a></nav>
+    <div class="language" role="group" aria-label="Language / Dil"><button type="button" data-language="tr" lang="tr" aria-label="Türkçe" aria-pressed="true">TR</button><span aria-hidden="true">/</span><button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
   </header>
-
-  <main id="main">
-    <section class="hero" aria-labelledby="release-title">
-      <div class="hero-film" aria-hidden="true">
-        <video id="bgvid" muted loop playsinline preload="none" poster="assets/poster.jpg" tabindex="-1">
-          <source src="assets/teaser.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="small-rule" aria-hidden="true"></span> Sena Şener · Yeni şarkı</p>
-          <h1 id="release-title"><span>Alışılır mı</span><span class="title-last">Aşka<span class="title-mark" aria-hidden="true">✳</span></span></h1>
-          <p class="release-intro">Her şarkıyla biraz daha.<br>Yeni albümden bir parça daha.</p>
-          <div class="release-info">
-            <p class="release-status" id="release-status" role="status" aria-live="polite">11 Eylül'de</p>
-            <p class="release-date"><time id="release-date" datetime="2026-09-11T00:00:00+03:00">11 Eylül 2026</time><span id="release-time"> · 00.00 (TSİ)</span></p>
-          </div>
-          <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="Yayına kalan süre" hidden>
-            <div class="countdown-unit" id="countdown-days" hidden><span data-unit="days">00</span><span class="countdown-label">gün</span></div>
-            <div class="countdown-unit"><span data-unit="hours">00</span><span class="countdown-label">saat</span></div>
-            <span class="countdown-colon" aria-hidden="true">:</span>
-            <div class="countdown-unit"><span data-unit="minutes">00</span><span class="countdown-label">dakika</span></div>
-            <span class="countdown-colon" aria-hidden="true">:</span>
-            <div class="countdown-unit"><span data-unit="seconds">00</span><span class="countdown-label">saniye</span></div>
-          </div>
-          <div class="hero-actions">
-            <a class="button button-primary" id="release-cta" href="#dinle"><span id="release-cta-label">Sena'yı dinle</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#album">Albümü keşfet <span aria-hidden="true">↓</span></a>
-          </div>
-        </div>
-        <div class="film-caption">
-          <span class="film-caption-line" aria-hidden="true"></span>
-          <p>Aşkından Ölmemeli<span>Albüm dünyasından görüntüler</span></p>
-        </div>
-      </div>
-      <div class="hero-bottom">
-        <p class="sound-note">Anadolu ruhu. Soul. Biraz caz.</p>
-        <div class="film-controls" id="film-controls" hidden>
-          <button id="sound-toggle" type="button" aria-pressed="false" aria-controls="bgvid"><span class="sound-icon" aria-hidden="true">♪</span><span id="sound-label">Sesi aç</span></button>
-          <button id="motion-toggle" type="button" aria-pressed="false" aria-controls="bgvid"><span id="motion-label">Videoyu oynat</span></button>
-        </div>
-      </div>
-      <p class="media-status" id="media-status" role="status" aria-live="polite"></p>
-    </section>
-
-    <section class="album-section" id="album" aria-labelledby="album-title">
-      <div class="section-kicker"><span>Bir albümün hikâyesi</span><span>Sena Şener</span></div>
-      <div class="album-layout">
-        <div class="record-column">
-          <div class="record-caption"><span>Sena Şener</span><span>Albümden parçalar</span></div>
-          <!-- The original site's vinyl motif and artist label, retained as the album's visual thread. -->
-          <div class="hero-record" aria-hidden="true">
-            <div class="disc">
-              <div class="grooves"></div>
-              <div class="hr-label"><img src="assets/logo.png" width="800" height="800" alt="" loading="lazy"></div>
-            </div>
-          </div>
-          <p class="record-footnote">Her şarkıda yeni bir hikâye.</p>
-        </div>
-        <div class="album-copy">
-          <p class="eyebrow">Yeni albüm</p>
-          <h2 id="album-title">Şarkı şarkı,<br>bir albüm.</h2>
-          <p class="album-intro">Bir anda değil, şarkı şarkı. Sena Şener'in yeni albümü her yeni parçayla biraz daha açılıyor.</p>
-          <div class="track-list" aria-label="Albümden paylaşılan şarkılar">
-            <article class="track">
-              <div><p class="track-status">Yayında</p><h3>Aşkından Ölmemeli</h3><time datetime="2026-08-07">07 Ağustos 2026</time></div>
-              <a class="track-link" href="#dinle" aria-label="Aşkından Ölmemeli — dinleme bağlantıları">Dinle <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="track track-current">
-              <div><p class="track-status" id="new-track-status">Yeni şarkı · 11 Eylül'de</p><h3>Alışılır mı Aşka</h3><time datetime="2026-09-11">11 Eylül 2026</time></div>
-              <a class="track-link" id="new-track-link" href="#release-title" aria-label="Alışılır mı Aşka — yayın bilgisi"><span id="new-track-link-label">Keşfet</span> <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-          <p class="album-note">Hikâye, yeni şarkılarla devam edecek.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="listen-section" id="dinle" aria-labelledby="listen-title">
-      <div class="listen-copy"><p class="eyebrow">Müzikle kal</p><h2 id="listen-title">İğneyi bırak.<br>Kendini müziğe.</h2><p>Sena Şener'in sanatçı sayfaları</p></div>
-      <div class="platforms">
-        <a href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer"><span><span class="platform-type">Dinle & takip et</span>Spotify</span><span aria-hidden="true">↗</span><span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-        <a href="https://music.apple.com/tr/artist/sena-%C5%9Fener/1084577486" target="_blank" rel="noopener noreferrer"><span><span class="platform-type">Dinle</span>Apple Music</span><span aria-hidden="true">↗</span><span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-        <a href="https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ" target="_blank" rel="noopener noreferrer"><span><span class="platform-type">İzle & dinle</span>YouTube</span><span aria-hidden="true">↗</span><span class="sr-only"> — Sena Şener, yeni sekmede açılır</span></a>
-      </div>
-    </section>
+  <main class="hero" id="main" tabindex="-1">
+    <div class="hero-copy" id="hero-copy">
+      <p class="eyebrow hero-eyebrow"><span class="small-rule" aria-hidden="true"></span><span data-i18n="artistLabel">Sena Şener · Yeni albümden</span></p>
+      <h1 id="release-title"><span>Sev</span><span>Diyeydi</span></h1>
+      <p class="release-note" id="release-note">Yeni albümden bir hikâye daha.</p>
+      <div class="release-meta"><span class="status-dot" aria-hidden="true"></span><span data-i18n="out">Şimdi yayında</span><span class="meta-divider" aria-hidden="true">/</span><time id="release-date" datetime="2026-10-23">23 Ekim 2026</time></div>
+      <div class="hero-actions"><a class="button button-primary" href="#music" data-open="music"><span class="play-icon" aria-hidden="true">▶</span><span data-i18n="listen">Şimdi dinle</span><span class="button-arrow" aria-hidden="true">↗</span></a><a class="text-link" id="watch-link" href="https://www.youtube.com/watch?v=g3uNy61RNt0" target="_blank" rel="noopener noreferrer"><span id="watch-label">YouTube’da dinle</span><span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="chapter-tag" aria-hidden="true"><span data-i18n="eraLabel">Yeni bir dönem</span><span class="chapter-year">20<br>26</span></div>
+    <div class="film-caption"><span class="caption-rule" aria-hidden="true"></span><span data-i18n="filmLabel">Albüm dünyasından</span><span>Aşkından Ölmemeli</span></div>
+    <div class="release-pagination"><span class="release-count"><span id="current-number">03</span><span class="count-line" aria-hidden="true"></span><span id="release-total">03</span></span><button type="button" id="previous-release" aria-label="Önceki şarkı">←</button><button type="button" id="next-release" aria-label="Sonraki şarkı">→</button></div>
   </main>
-
+  <section class="release-shelf" aria-labelledby="shelf-title">
+    <div class="shelf-heading"><h2 id="shelf-title"><span class="shelf-star" aria-hidden="true">✳</span><span data-i18n="releases">Albümden şarkılar</span><span class="shelf-era"> / Aşkından Ölmemeli</span></h2><a href="#music" data-open="music"><span data-i18n="allMusic">Tüm müzikler</span><span aria-hidden="true">↗</span></a></div>
+    <div class="release-rail" id="release-rail"><button type="button" class="release-button" data-release="askindan-olmemeli" aria-pressed="false" aria-controls="hero-copy" aria-label="Aşkından Ölmemeli — Şarkıyı keşfet"><img src="assets/releases/askindan-olmemeli.jpg" alt="" width="64" height="64"><span class="release-button-copy"><span class="release-button-top">01 / Şimdi yayında</span><span class="release-button-title">Aşkından Ölmemeli</span><span class="release-button-date">07 Ağustos 2026</span></span><span class="track-indicator" aria-hidden="true"><i></i><i></i><i></i></span></button>
+<button type="button" class="release-button" data-release="alisilir-mi-aska" aria-pressed="false" aria-controls="hero-copy" aria-label="Alışılır mı Aşka — Şarkıyı keşfet"><img src="assets/releases/alisilir-mi-aska.jpg" alt="" width="64" height="64"><span class="release-button-copy"><span class="release-button-top">02 / Şimdi yayında</span><span class="release-button-title">Alışılır mı Aşka</span><span class="release-button-date">11 Eylül 2026</span></span><span class="track-indicator" aria-hidden="true"><i></i><i></i><i></i></span></button>
+<button type="button" class="release-button" data-release="sev-diyeydi" aria-pressed="true" aria-controls="hero-copy" aria-label="Sev Diyeydi — Şarkıyı keşfet"><img src="assets/releases/sev-diyeydi.jpg" alt="" width="64" height="64"><span class="release-button-copy"><span class="release-button-top">03 / Yeni tekli</span><span class="release-button-title">Sev Diyeydi</span><span class="release-button-date">23 Ekim 2026</span></span><span class="track-indicator" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+  </section>
   <footer class="site-footer">
-    <div class="footer-wordmark" aria-label="Sena Şener">Sena Şener</div>
-    <div class="footer-bottom"><p>© 2026 Sena Şener</p><img src="assets/logo.png" width="42" height="42" alt="" loading="lazy"><a href="#top">Başa dön ↑</a></div>
+    <p class="footer-copyright">© <span data-year>2026</span> Sena Şener</p>
+    <div class="social-links"><a data-site-link="instagram" href="https://www.instagram.com/sena.sener/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a data-site-link="spotify" href="https://open.spotify.com/artist/7CW2eGwAuElNq09rVtZYsM" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a data-site-link="youtube" href="https://www.youtube.com/channel/UCfrpd0imEITLaj1LEnEL1gQ" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div>
+    <div class="film-controls" id="film-controls" hidden>
+      <button type="button" id="motion-toggle" aria-controls="bgvid" aria-pressed="false" aria-label="Filmi oynat"><span id="motion-icon" aria-hidden="true">▶</span><span class="motion-label" id="motion-label">Filmi oynat</span></button><span class="control-divider" aria-hidden="true"></span>
+      <button type="button" id="sound-toggle" aria-controls="bgvid" aria-pressed="false" aria-describedby="sound-credit"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path id="sound-wave" d="m16 9 6 6m0-6-6 6"/></svg><span id="sound-label">Film sesini aç</span></button><span id="sound-credit" class="sr-only" data-i18n="soundCredit">Film: Aşkından Ölmemeli</span>
+    </div>
   </footer>
+  <p id="media-status" class="media-status" role="status"></p><p id="release-announcement" class="sr-only" aria-live="polite"></p>
+</div>
+<dialog class="overlay" id="overlay" aria-labelledby="music-title">
+  <div class="overlay-shell">
+    <header class="overlay-header">
+      <a class="brand" href="./" data-close aria-label="Sena Şener — Ana sayfa"><img src="assets/logo.png" width="38" height="38" alt=""><span>Sena Şener</span></a>
+      <nav class="main-nav overlay-nav" aria-label="Ana menü" data-nav-label><a href="#music" data-open="music" data-i18n="music">Müzik</a><a href="#live" data-open="live" data-i18n="live">Live</a><a href="#press" data-open="press" data-i18n="press">Basın</a><a href="#booking" data-open="booking" data-i18n="booking">Booking</a></nav>
+      <button class="close-button" type="button" data-close><span data-i18n="close">Kapat</span><span class="close-symbol" aria-hidden="true">×</span></button>
+    </header>
+    <div class="overlay-scroll" id="overlay-scroll">
+      <section class="panel music-panel" data-panel="music" hidden>
+        <div class="panel-heading"><p class="eyebrow" data-i18n="musicEyebrow">Aşkından Ölmemeli · Albümden</p><h2 id="music-title" tabindex="-1" data-i18n="musicTitle">Şarkı şarkı, bir dünya.</h2><p class="panel-intro" data-i18n="musicIntro">Her şarkıda biraz daha açılan bir hikâye. İstediğin yerden başla.</p></div>
+        <div class="music-grid" id="music-grid"></div>
+        <div class="catalogue"><div><p class="eyebrow" data-i18n="catalogueNote">Sena Şener’in müzik dünyası</p><h3 data-i18n="catalogue">Bütün şarkılar</h3></div><div class="catalogue-links"><a data-site-link="spotify" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a data-site-link="apple" target="_blank" rel="noopener noreferrer">Apple Music ↗</a><a data-site-link="youtube" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div>
+      </section>
+      <section class="panel split-panel live-panel" data-panel="live" hidden>
+        <div class="panel-copy"><p class="eyebrow" data-i18n="liveEyebrow">Sena Şener · Sahnede</p><h2 id="live-title" tabindex="-1" data-i18n="liveTitle">Aynı şarkıda. Aynı yerde.</h2><p class="panel-intro" data-i18n="liveIntro">Birlikte söylemek için. Güncel konser tarihleri ve biletler burada.</p><a class="editorial-link" data-site-link="concerts" target="_blank" rel="noopener noreferrer"><span><small data-i18n="ticketsNote">Güncel program · Bubilet</small><span data-i18n="tickets">Konserler & biletler</span></span><span aria-hidden="true">↗</span></a><p class="live-follow" data-i18n="liveFollow">Sahneden, stüdyodan, hayattan.</p><a class="text-link" data-site-link="instagram" target="_blank" rel="noopener noreferrer"><span data-i18n="follow">Instagram’da takip et</span><span aria-hidden="true">↗</span></a></div>
+        <figure class="panel-photo live-photo"><img src="assets/press-portrait.jpg" alt="Sena Şener" width="952" height="1288" loading="lazy"><figcaption><span>Sena Şener</span><span>Live</span></figcaption></figure>
+      </section>
+      <section class="panel split-panel press-panel" data-panel="press" hidden>
+        <figure class="panel-photo press-photo"><img src="assets/press-portrait.jpg" alt="Sena Şener" width="952" height="1288" loading="lazy"><figcaption data-i18n="photoCredit">Fotoğraf: Sena Şener arşivi</figcaption></figure>
+        <div class="panel-copy"><p class="eyebrow" data-i18n="pressEyebrow">Basın & medya</p><h2 id="press-title" tabindex="-1" data-i18n="pressTitle">Sesin arkasındaki dünya.</h2><p class="panel-intro" data-i18n="pressIntro">Şarkıcı, söz yazarı ve prodüktör. Sena Şener’in yeni döneminde retro pop ve soul, Anadolu melodileriyle buluşuyor.</p><div class="press-links"><a class="editorial-link" data-site-link="press" target="_blank" rel="noopener noreferrer"><span><small data-i18n="pressKitNote">Biyografi & sanatçı hikâyesi</small><span data-i18n="pressKit">Basın kiti</span></span><span aria-hidden="true">↗</span></a><a class="editorial-link" data-site-link="media" target="_blank" rel="noopener noreferrer"><span><small data-i18n="mediaKitNote">Basın fotoğrafları & görsel kimlik</small><span data-i18n="mediaKit">Medya kiti</span></span><span aria-hidden="true">↗</span></a></div><a class="text-link pdf-link" data-site-link="pressPdf" target="_blank" rel="noopener noreferrer"><span data-i18n="download">Basın kitini indir</span><span class="pdf-label">PDF ↓</span></a></div>
+      </section>
+      <section class="panel booking-panel" data-panel="booking" hidden>
+        <div class="booking-watermark" aria-hidden="true"><img src="assets/logo.png" width="800" height="800" alt=""></div>
+        <div class="panel-copy"><p class="eyebrow" data-i18n="bookingEyebrow">Booking & iletişim</p><h2 id="booking-title" tabindex="-1" data-i18n="bookingTitle">Birlikte bir şeyler.</h2><p class="panel-intro" data-i18n="bookingIntro">Konserler, festivaller, iş birlikleri ve yeni hikâyeler için.</p><div class="contact-block"><p class="eyebrow" data-i18n="management">Menajerlik · Basın · Booking</p><a class="contact-email" id="contact-email" href="mailto:management@senasener.com"><span>management@senasener.com</span><span aria-hidden="true">↗</span></a><p class="contact-note" data-i18n="contactNote">Konser ve etkinlik taleplerinde tarih, şehir ve mekân bilgilerini paylaşabilirsin.</p></div></div>
+      </section>
+    </div>
+    <footer class="overlay-footer"><span>© <span data-year>2026</span> Sena Şener</span><span data-i18n="eraLabel">Yeni bir dönem</span><img src="assets/logo.png" width="24" height="24" alt=""></footer>
+  </div>
+</dialog>
+<noscript><style>.hero-actions [data-open],.main-nav,.language,.release-pagination,.shelf-heading>a{display:none}.release-button{pointer-events:none}.noscript-links{position:fixed;z-index:30;bottom:0;inset-inline:0;background:#27150f;padding:12px;display:flex;flex-wrap:wrap;gap:16px;font-size:12px}</style><nav class="noscript-links" aria-label="Bağlantılar"><a href="https://open.spotify.com/track/2Zsr7YRskWBBX7ndWpxflo">Sev Diyeydi · Spotify ↗</a><a href="https://www.bubilet.com.tr/sanatci/sena-sener">Konserler ↗</a><a href="https://presskit.senasener.com/">Basın ↗</a><a href="mailto:management@senasener.com">Booking ↗</a></nav></noscript>
 </body>
 </html>
